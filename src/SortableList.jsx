@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-// import { ReactNode } from "react";
+
 import {
   DndContext,
   KeyboardSensor,
@@ -7,7 +7,7 @@ import {
   useSensor,
   useSensors,
 } from "@dnd-kit/core";
-// import { Active, UniqueIdentifier } from "@dnd-kit/core";
+
 import {
   SortableContext,
   arrayMove,
@@ -16,8 +16,8 @@ import {
 
 import "./SortableList.css";
 
-//import { /* DragHandle, SortableItem,*/ SortableOverlay } from "./components";
-import { SortableOverlay } from "./components/SortableOverlay";
+import { DragHandle, SortableItem, SortableOverlay } from "./components";
+
 export function SortableList({ items = [], onChange, renderItem }) {
   const [active, setActive] = useState(null);
   const activeItem = useMemo(
@@ -67,5 +67,5 @@ export function SortableList({ items = [], onChange, renderItem }) {
   );
 }
 
-// SortableList.Item = SortableItem;
-// SortableList.DragHandle = DragHandle;
+SortableList.SortableItem = SortableItem;
+SortableList.DragHandle = DragHandle;
